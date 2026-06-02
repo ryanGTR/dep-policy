@@ -1,0 +1,6 @@
+# 任何對 allow-list 的變更必須由 code owner 核可。
+# GitHub 的 CODEOWNERS + 「Require review from Code Owners」(ruleset/branch protection)
+# 是免費的——比 GitLab CE 需要付費 Approval Rules 乾淨。正式環境把 @ryanGTR 換成
+# @org/security-team team。
+*.yaml      @ryanGTR
+scripts/    @ryanGTR

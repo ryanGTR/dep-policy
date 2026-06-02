@@ -1,0 +1,58 @@
+name: dep-policy-review
+
+# PR 上來時自動審查新增 coord：lint + OSV CVE（貼回 PR）+ cooldown（≥30 天，未過則擋）。
+# 最終核可由 CODEOWNERS 人工決定（ruleset 強制）。
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write   # 貼審查報告回 PR
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint yaml（結構 + 必填 coord）
+        run: |
+          python3 -m pip install -q pyyaml
+          python3 -c "import yaml,sys; ok=all(all(x.get('coord') for x in (yaml.safe_load(open(f)) or {}).get('approved',[])) for f in ['maven-approved.yaml','npm-approved.yaml']); print('lint OK' if ok else 'missing coord'); sys.exit(0 if ok else 1)"
+
+  review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: OSV CVE + cooldown（新增 coord）
+        run: |
+          set -euo pipefail
+          chmod +x scripts/cooldown-check.sh
+          git fetch -q origin "${{ github.base_ref }}"
+          ADDED=$(git diff "origin/${{ github.base_ref }}...HEAD" -- maven-approved.yaml npm-approved.yaml \
+            | grep -E '^\+\s+- coord:' | sed -E 's/^\+\s*- coord:\s*//; s/^"//; s/"$//' | sort -u || true)
+          echo "新增 coord:"; echo "$ADDED" | sed 's/^/  /'
+          echo "## 🔍 dep-policy 自動審查報告" > report.md; echo >> report.md
+          [ -z "$ADDED" ] && echo "_本 PR 沒新增 coord_" >> report.md
+          COOLDOWN_FAIL=0
+          while IFS= read -r C; do
+            [ -z "$C" ] && continue
+            if echo "$C" | grep -qE '@'; then ECO=npm; NAME="${C%@*}"; VER="${C##*@}"
+            else ECO=Maven; NAME="$(echo "$C"|cut -d: -f1-2)"; VER="$(echo "$C"|cut -d: -f3)"; fi
+            VULNS=$(curl -fsS -X POST -H 'Content-Type: application/json' \
+              --data "{\"package\":{\"name\":\"$NAME\",\"ecosystem\":\"$ECO\"},\"version\":\"$VER\"}" \
+              https://api.osv.dev/v1/query \
+              | jq -r '.vulns // [] | if length==0 then "✅ 無已知 CVE" else (map("- `"+.id+"`")|join("\n")) end')
+            { echo "### \`$C\`"; echo "$VULNS"; echo; } >> report.md
+            ./scripts/cooldown-check.sh "$C" 30 || COOLDOWN_FAIL=1
+          done <<< "$ADDED"
+          echo "_CVE 為 informational；最終由 @CODEOWNERS 人工核可。_" >> report.md
+          cat report.md
+          gh pr comment "${{ github.event.pull_request.number }}" --body-file report.md || echo "⚠ 貼 PR comment 失敗"
+          [ "$COOLDOWN_FAIL" -eq 0 ] || { echo "✗ 有 coord 未滿 30 天 cooldown"; exit 1; }

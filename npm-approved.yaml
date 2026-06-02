@@ -1,0 +1,384 @@
+# npm 套件白名單
+# 每筆 entry 是一個被 security team 核可可使用的 npm 套件 + 版本。
+# 新增 entry 要走 MR：CODEOWNERS 強制 @security-team approve。
+# 由 ./platform/seed-dep-policy.sh 從 package-lock.json 種子產生（2026-05-28）。
+
+approved:
+  - coord: "@babel/helper-string-parser@7.29.7"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@babel/helper-validator-identifier@7.29.7"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@babel/parser@7.29.7"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@babel/types@7.29.7"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/aix-ppc64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/android-arm64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/android-arm@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/android-x64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/darwin-arm64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/darwin-x64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/freebsd-arm64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/freebsd-x64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/linux-arm64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/linux-arm@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/linux-ia32@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/linux-loong64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/linux-mips64el@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/linux-ppc64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/linux-riscv64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/linux-s390x@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/linux-x64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/netbsd-arm64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/netbsd-x64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/openbsd-arm64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/openbsd-x64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/openharmony-arm64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/sunos-x64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/win32-arm64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/win32-ia32@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@esbuild/win32-x64@0.25.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@jridgewell/sourcemap-codec@1.5.5"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-android-arm-eabi@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-android-arm64@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-darwin-arm64@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-darwin-x64@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-freebsd-arm64@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-freebsd-x64@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-arm-gnueabihf@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-arm-musleabihf@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-arm64-gnu@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-arm64-musl@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-loong64-gnu@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-loong64-musl@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-ppc64-gnu@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-ppc64-musl@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-riscv64-gnu@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-riscv64-musl@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-s390x-gnu@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-x64-gnu@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-linux-x64-musl@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-openbsd-x64@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-openharmony-arm64@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-win32-arm64-msvc@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-win32-ia32-msvc@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-win32-x64-gnu@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@rollup/rollup-win32-x64-msvc@4.60.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@types/estree@1.0.8"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vitejs/plugin-vue@5.2.4"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@volar/language-core@2.4.15"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@volar/source-map@2.4.15"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@volar/typescript@2.4.15"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vue/compiler-core@3.5.35"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vue/compiler-dom@3.5.35"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vue/compiler-sfc@3.5.35"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vue/compiler-ssr@3.5.35"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vue/compiler-vue2@2.7.16"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vue/language-core@2.2.12"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vue/reactivity@3.5.35"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vue/runtime-core@3.5.35"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vue/runtime-dom@3.5.35"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vue/server-renderer@3.5.35"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: "@vue/shared@3.5.35"
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: agent-base@6.0.2
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: alien-signals@1.0.13
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: asynckit@0.4.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: axios@1.16.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: balanced-match@1.0.2
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: brace-expansion@2.1.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: call-bind-apply-helpers@1.0.2
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: combined-stream@1.0.8
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: csstype@3.2.3
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: de-indent@1.0.2
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: debug@4.4.3
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: delayed-stream@1.0.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: dunder-proto@1.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: entities@7.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: es-define-property@1.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: es-errors@1.3.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: es-object-atoms@1.1.2
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: es-set-tostringtag@2.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: esbuild@0.25.12
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: estree-walker@2.0.2
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: fdir@6.5.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: follow-redirects@1.16.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: form-data@4.0.5
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: fsevents@2.3.3
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: function-bind@1.1.2
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: get-intrinsic@1.3.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: get-proto@1.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: gopd@1.2.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: has-symbols@1.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: has-tostringtag@1.0.2
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: hasown@2.0.4
+    approved_at: 2026-06-01
+    approved_by: dep-drift-bump
+  - coord: he@1.2.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: https-proxy-agent@5.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: magic-string@0.30.21
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: math-intrinsics@1.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: mime-db@1.52.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: mime-types@2.1.35
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: minimatch@9.0.9
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: ms@2.1.3
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: muggle-string@0.4.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: nanoid@3.3.12
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: path-browserify@1.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: picocolors@1.1.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: picomatch@4.0.4
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: postcss@8.5.15
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: proxy-from-env@2.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: rollup@4.60.4
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: source-map-js@1.2.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: tinyglobby@0.2.16
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: typescript@5.9.3
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: vite@6.4.2
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: vscode-uri@3.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: vue-tsc@2.2.12
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: vue@3.5.35
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed

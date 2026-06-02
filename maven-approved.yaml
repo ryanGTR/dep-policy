@@ -1,0 +1,99 @@
+# Maven 套件白名單
+# 每筆 entry 是一個被 security team 核可可使用的 Maven 座標。
+# 新增 entry 要走 MR：CODEOWNERS 強制 @security-team approve。
+# 由 ./platform/seed-dep-policy.sh 從現有 pom.xml 種子產生（2026-05-28）。
+
+approved:
+  - coord: jakarta.annotation:jakarta.annotation-api:2.1.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.authentication:jakarta.authentication-api:3.0.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.ejb:jakarta.ejb-api:4.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.el:jakarta.el-api:5.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.enterprise:jakarta.enterprise.lang-model:4.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.faces:jakarta.faces-api:4.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.inject:jakarta.inject-api:2.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.interceptor:jakarta.interceptor-api:2.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.json.bind:jakarta.json.bind-api:3.0.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.json:jakarta.json-api:2.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.persistence:jakarta.persistence-api:3.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.platform:jakarta.jakartaee-core-api:10.0.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.platform:jakarta.jakartaee-web-api:10.0.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.security.enterprise:jakarta.security.enterprise-api:3.0.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.servlet:jakarta.servlet-api:6.0.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.transaction:jakarta.transaction-api:2.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.validation:jakarta.validation-api:3.0.2
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.websocket:jakarta.websocket-api:2.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.websocket:jakarta.websocket-client-api:2.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: jakarta.ws.rs:jakarta.ws.rs-api:3.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: org.eclipse.microprofile.config:microprofile-config-api:3.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: org.eclipse.microprofile.fault-tolerance:microprofile-fault-tolerance-api:4.0.2
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: org.eclipse.microprofile.health:microprofile-health-api:4.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: org.eclipse.microprofile.jwt:microprofile-jwt-auth-api:2.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: org.eclipse.microprofile.metrics:microprofile-metrics-api:5.1.0
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: org.eclipse.microprofile:microprofile:6.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: org.eclipse.microprofile.openapi:microprofile-openapi-api:3.1.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
+  - coord: org.eclipse.microprofile.rest.client:microprofile-rest-client-api:3.0.1
+    approved_at: 2026-05-28
+    approved_by: bootstrap-seed
