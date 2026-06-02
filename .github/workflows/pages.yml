@@ -1,0 +1,39 @@
+name: pages
+
+# 依賴治理儀表板 → GitHub Pages（白名單健康度 + 核可後才爆的 CVE）。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 產治理儀表板
+        run: |
+          python3 -m pip install -q pyyaml
+          python3 scripts/governance-dashboard.py --out public
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: public }
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
