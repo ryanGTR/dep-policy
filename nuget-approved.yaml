@@ -1,0 +1,9 @@
+# NuGet 套件白名單
+# 每筆 entry 是一個被 security team 核可可使用的 NuGet 套件（name@version）。
+# 新增 entry 要走 PR：CODEOWNERS 強制 @security-team approve。
+# 由 dotnet/packages.lock.json 種子產生（2026-06-08）。
+
+approved:
+  - coord: Newtonsoft.Json@13.0.3
+    approved_at: 2026-06-08
+    approved_by: bootstrap-seed
