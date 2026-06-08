@@ -6,7 +6,7 @@
 
 ## 審核流程（GitHub-native）
 
-要加套件 = 開 PR 改 `{maven,npm}-approved.yaml`：
+要加套件 = 開 PR 改 `{maven,npm,nuget}-approved.yaml`：
 
 1. PR 觸發 `dep-policy-review` workflow：
    - **lint**：yaml 結構 / 必填 `coord`
@@ -22,7 +22,7 @@
 
 | 檔案 | 用途 |
 |---|---|
-| `maven-approved.yaml` / `npm-approved.yaml` | 白名單 |
+| `maven-approved.yaml` / `npm-approved.yaml` / `nuget-approved.yaml` | 白名單（Maven / npm / NuGet）|
 | `CODEOWNERS` | yaml 變更需 code owner 核可 |
 | `.github/workflows/review.yml` | PR 自動審查（CVE + cooldown）|
 | `scripts/cooldown-check.sh` / `recheck-approved.sh` | cooldown / 持續重掃 |
