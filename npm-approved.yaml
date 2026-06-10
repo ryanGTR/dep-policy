@@ -4,6 +4,10 @@
 # 由 ./platform/seed-dep-policy.sh 從 package-lock.json 種子產生（2026-05-28）。
 
 approved:
+  - coord: left-pad@1.3.0
+    approved_at: 2026-06-02
+    approved_by: devalice
+    reason: "字串補齊（demo 申請）"
   - coord: "@babel/helper-string-parser@7.29.7"
     approved_at: 2026-05-28
     approved_by: bootstrap-seed
